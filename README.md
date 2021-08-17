@@ -1,4 +1,4 @@
-# German_Article_Exercise
+# German_Articles_Exercise
 
 A command-line exercise which allows to learn articles of substantives in German language.
 
