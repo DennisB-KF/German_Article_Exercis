@@ -17,13 +17,13 @@ for i in subs:
     print(i[0])
     a = input('Enter the article: ')
     if a == i[1]:
-        print('Correct!\n******')
+        print('Correct!\n******\n')
         count += 1
     else:
         wrongs.append(i)
-        print(f'Wrong, the correct article is: {i[1]}')
+        print(f'Wrong, the correct article is: {i[1]}\n')
 
-print(f"That is it! Out of {len(subs)} you've answered {int(count/len(subs)*100)} percent correct.")
+print(f"That is it! Out of {len(subs)} you've answered {int(count/len(subs)*100)} percent correct.\n")
 print('The wrong answers were:\n')
 for i in wrongs:
     print(f'{i[1]}' + ' ' + f'{i[0]}\n')
