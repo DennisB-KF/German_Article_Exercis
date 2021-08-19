@@ -1,6 +1,7 @@
 import random
 
-Subs = []
+subs = []
+wrongs = []
 count = 0
 
 with open('woerter.csv') as file:
@@ -8,17 +9,21 @@ with open('woerter.csv') as file:
     for line in file:
         line = line.strip('\n')
         (w,a) = line.split(',')
-        Subs.append((w,a))
+        subs.append((w,a))
 
-random.shuffle(Subs)
+random.shuffle(subs)
 
-for i in Subs:
+for i in subs:
     print(i[0])
     a = input('Enter the article: ')
     if a == i[1]:
         print('Correct!\n******')
         count += 1
     else:
+        wrongs.append(i)
         print(f'Wrong, the correct article is: {i[1]}')
 
-print(f"That is it! You've answered {int(count/len(Subs)*100)} percent correct.")
+print(f"That is it! Out of {len(subs)} you've answered {int(count/len(subs)*100)} percent correct.")
+print('The wrong answers were:\n')
+for i in wrongs:
+    print(f'{i[1]}' + ' ' + f'{i[0]}\n')
